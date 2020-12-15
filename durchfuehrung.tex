@@ -4,40 +4,45 @@
 \schritt{1}{Den Roboterarm vorbereiten}{
 Die Pappe schneidet ihr in sechs 30cm lange und 2cm breite Streifen. Davon halbiert ihr zwei, sodass ihr vier 15cm lange Streifen habt. Zwei von diesen kürzt ihr nochmal auf 12cm.\\
 
-Außerdem benötigt ihr vier Pappteile, die ihr wie auf dem Bild zuschneidet, zirka 12 kleine Pappquadrate und zwei Pappkreise, deren Durchmesser ungefähr mit der Größe der Reifen übereinstimmt.\\
-
-Die Pappstreifen werden jetzt zusammengeklebt.
-Dafür klebt ihr jeweils zwei gleichlangen Streifen mit Heißkleber zusammen, sodass ihr zwei 30cm, ein 15cm und ein 12cm langes Pappstück habt.\\
-
-Die vier Pappteile klebt ihr übereinander zu einem Klotz. An diesem können später die Stifte mit der Maulklemme befestigt werden.\\
-
-}
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=5cm]{pappstucke.jpg}
-\caption*{Stifte}
+\caption*{Nutzt zum Schneiden entweder eine Schere oder (noch einfacher) Lineal und Cuttermesser. Gut aufpassen und eine schnittfeste Unterlage verwenden!}
 \end{figure}
 
+Außerdem benötigt ihr vier Pappteile, die ihr wie auf dem Bild zuschneidet, zirka 12 kleine Pappquadrate und zwei Pappkreise, deren Durchmesser ungefähr mit der Größe der Reifen übereinstimmen sollte. Ein bisschen größer ist ideal.\\
+
+Die Pappstreifen werden jetzt zusammengeklebt. Dafür klebt ihr jeweils zwei gleichlangen Streifen mit Heißkleber zusammen, sodass ihr zwei 30cm, ein 15cm und ein 12cm langes Pappstück habt.\\
+Die vier Pappteile klebt ihr übereinander zu einem Klotz. An diesem können später die Stifte mit der Maulklemme befestigt werden.\\
+}
+
+
 \schritt{2}{Den Roboterarm bauen}{
-Die Pappteile müssen zu einem Arm zusammengebaut werden. Dabei bilden zwei kleine Pappquadrae und ein Zahnstocher ein Gelenk, das die Pappteile miteinander verbindet.
-Am besten orientiert ihr euch an der folgenden Grafik:\\
+Die Pappteile müssen nun zu einem Arm zusammengebaut werden. Dabei bilden zwei kleine Pappquadrae und ein Zahnstocher ein Gelenk, das die Pappteile miteinander verbindet.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{gelenk.jpg}
+\end{figure}
 
 
-Falls ihr nicht weiterwisst, gibt es auch eine ausführlichere Beschreibung auf https://tuduu.org/projekt/automatischer-malroboter .\\
+Beim Zusammenstecken der einzelnen Teile orientiert ihr euch am besten an der folgenden Grafik:\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{arm.jpg}
+\end{figure}
+
+Falls ihr nicht weiterwisst, gibt es {https://tuduu.org/projekt/automatischer-malroboter}{hier}\footnote[2]{https://tuduu.org/projekt/automatischer-malroboter} auch nochmal die ausführlichere Beschreibung.\\
 Den Pappblock klebt ihr auf die Unterseite des Arms, also nicht die Fläche, auf welcher der zweite Pappstreifen aufliegt.\\
 
 Wenn alles zusammengesteckt und verbunden ist, testet euren Arm vorsichtig. Bewegt sich alles reibungslos?\\
-
 Dann verklebt die Zahnstocher zum Schluss oben und unten mit einem Tropfen Heißkleber, dann hällt alles ein bisschen besser.\\
-Die Pappkreise klebt ihr so auf die Reifen, dass die Pappstreifen oben auf liegen.\\
+Die Pappkreise klebt ihr schließlich so auf die Reifen, dass die Pappstreifen oben auf liegen und die Räder sich frei drehen können.\\
 
+Den Stift klebt ihr auf die breite Fläche der Maulklemme. Falls das bei euch (auch) nicht halten sollte, könnt ihr den Stift auch mit der Maulklemme an den Pappklotz klemmen - klappt mindestens genauso gut und hält sicher.\\
+Damit ist euer Arm fertig!\\
+Weiter geht's mit dem technischen Teil.\\
 }
-\begin{figure}[h]
-\centering
-\includegraphics[width=5cm]{arm.jpg}
-\caption*{Der Roboterarm sollte sich reibungslos bewegen lassen}
-\end{figure}
 
 
 
@@ -63,8 +68,8 @@ Die Pappkreise klebt ihr so auf die Reifen, dass die Pappstreifen oben auf liege
 \end{figure}
 
 
-Verbinden Sie den Raspberry Pi mit dem Motor sowie den Motor mit dem Treiber nach den Folgenden Tabellen.
-Für die Verbindungen an den Klemmen öffnen Sie diese mit einem Schraubenzieher, schieben das Kabel hinein und schrauben sie fest. Für die Verbindungen an den Pins verwenden Sie steckbare Jumperkabel (Female to Female).\\
+Verbindet den Raspberry Pi mit dem Motor sowie den Motor mit dem Treiber mithilfe der folgenden Tabellen.
+Für die Verbindungen an den Klemmen des Treibers, öffnet diese zuerst mit einem Schraubendreher, schiebt das Kabel hinein und schraubt sie wieder fest zu. Für die Verbindungen an den Pins verwendet ihr die steckbaren Jumperkabel (sogenannte Female to Female).\\
 
 \schritt{1}{Verbindung der Motoren mit dem Treiber}{}
 \begin{table}[h]
@@ -78,7 +83,7 @@ OUT3              & Motor2(+)           \\
 OUT4              & Motor2(-)           \\ \bottomrule
 \end{tabular}
 \end{center}
-\caption{Verbindungen zwischen dem Treiber und den Motoren. Die Polarität der Motoren spielt keine Rolle.}
+\caption{Verbindungen zwischen dem Treiber und den Motoren. Die Polarität der Motoren spielt dabei keine Rolle, ihr müsst euch also keinen Kopf darum machen, ob welches Kabel nach links oder recht muss.}
 \end{table}
 
 
@@ -98,10 +103,10 @@ GPIO 13                                                          & ENB          
 \begin{tabular}[c]{@{}c@{}}Masse (GND)\\ z.B. Pin 6\end{tabular} & \begin{tabular}[c]{@{}c@{}}Masse (GND) - Klemme\\ die selbe Klemme, an die auch (-)\\ der Versorgungsspannung angeschlossen\\ wird\end{tabular} \\ \bottomrule
 \end{tabular}
 \end{center}
-\caption{Verbindungen zwischen dem Raspberry Pi und dem Motortreiber. Die Bezeichnungen des Treibers stehen auf der Board-Ober- oder Unterseite}
+\caption{Verbindungen zwischen dem Raspberry Pi und dem Motortreiber. Die Bezeichnungen des Treibers findet ihr auf der Boardober- oder -unterseite}
 \end{table}
 
-Die letzte Verbindung in der Tabelle sollte beachtet werden! Es bietet sich an, sie mit einem Male-to-Female Jumperkabel zu verbinden, wie im Bild oben sichtbar.\\
+Achtet besonders auf die letzte Verbindung in der Tabelle! Am besten verbindet ihr hier mit einem Male-Female Jumperkabel, wie ihr es im Bild oben sehen könnt.\\
 
 \schritt{3}{Verbindung der Versorgungsspannung an den Treiber}{}
 Für diese Verbindung eignet sich ein Adapter, der den Stecker des 12V Netzteiles auf zwei einfache Kabel führt, um diese an die Klemmen des Treibers anzuschließen.
@@ -120,7 +125,31 @@ GND               & GND (i.d.R. schwarzes Kabel) \\ \bottomrule
 \caption{Verbindungen zwischen Treiber und Netzteil}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{netzteil_close.jpg}
+\end{figure}
+
 
 \subsection{Programmierung}
-\subsection{Programm A (Beispiel)}
-\subsection{Programm B}
+\subsection{Beispielprogramm kurs.py}
+
+
+\begin{lstlisting}
+
+# setz Geschwindigkeit des ersten Motors auf 20%, dreht links
+motorA_links(20)
+
+input("Enter zum fortfahren")
+
+# setz Geschwindigkeit des ersten Motors auf 12%, dreht rechts
+motorB_rechts(12)
+
+motorA_aus()
+motorB_aus()
+
+\end{lstlisting}
+
+Je nach Python-Kenntnissen kann das Programm noch um weitere Logikblöcke ergänzt werden, zum Beispiel Eingabeabfragen für die Drehgeschwindigkeit der Motoren oder ein ganzes Menü zur Steuerung des Roboters.\\
+Das Programm schreibt ihr am besten in der Datei kurs.py, und öffnet und führt es dann in Thonny aus.\\
+\hinweis Bei 12Volt und einer Stromversorgung über ein Netzteil sind 10\% Drehgeschwindigkeit der Motoren okay. 50\% sollten aber keinesfalls überschritten werden, die Motoren drehen dann einfach zu stark und zu schnell und könnten den Roboter damit in seine Einzelteile zerlegen. Probiert am besten ein bisschen herum, bevor ihr den Arm mit den Motoren verbindet.\\
